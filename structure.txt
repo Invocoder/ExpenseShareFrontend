@@ -1,0 +1,122 @@
+1. User - Representing user of the application
+{
+   userId(string): representing unique id for the user.
+   password: 
+   accessAllowed(bool) = true;
+   name(string): representing user name.
+   phoneNumber(varchar): 
+   
+}
+
+2. createExpense - Representing the expense created by one user with other user 
+{
+   createdBy(string): representing the unique id of the user who is creating expense.
+   array[anu:100, rohit: 23, ](string): representing the unique id of the user for whom the expense is created.  
+   expenseAmount(int): Representing the amount spent by createdBy and createdFor.  100
+   splitType(enum): representing type of split as in equal or percent 60+40
+   dateCreated: data this expense was created.
+   isSettled:
+   editedDate: 23-3-2000
+
+  enums.
+
+  if(splitType="equal")
+  {
+
+  }
+  ="percent"
+  {
+
+  }
+
+}
+UI:
+One page application
+
+class
+save users in array
+show like its logged in
+show expenses like by and to.
+homepage->show epenses-> add expense-> form-> other users(dropdown) + amount -> submit -> show them on expense list.
+3 or 4 users.
+
+Use these data models
+
+Thursday Eod.
+REPLY ALL. 
+coding 
+
+
+Upload public github
+reply all in mail.
+another round.
+
+
+
+
+API Endpoints:
+1. /createUser  (POST)
+2. /createExpense  (POST)
+3. /PendingBalance  (GET)
+4. /updateBalance   (POST)
+
+
+UI:
+ 
+       SignIn/SignUp
+
+Username: 
+Password:
+
+        AUTHENTICATION
+
+If(doesn't already exist){
+    register;
+    store in database.
+}
+
+if(already exists-check in db)
+{
+    login.
+}
+        
+      CreateExpense Button
+
+With whom: 
+Enter Amount:
+SpliteType(% / equal):
+
+Frontend: Success: Expense created.
+Backend: Stores this Expense created in database.
+
+     View Pending balance
+
+Search pending balance section of that user in database.
+Send to client 
+Display.
+
+     Pay Button
+Select a contact.
+Make payment.
+
+Backend: searches this userid in db and update the balance paid for both the users.
+
+
+
+
+1. user
+User Input: userId.
+Output: A unique id assigned(if database then serial number).
+
+2. createExpense
+Input: createdBy, createdFor, expenseAmount, Type.
+Output: Adding a new expense to the expense section of the createdBy as well as createdFor user after perfrming 
+the splitType operation over the expenseAmount
+
+3. PendingBalance
+Input: OfuserId
+Output: All expense details logged along that user's data.
+
+4. updateBalance
+Input:fromUserId, toUserId, amountPaid
+Output: Update in the expenseShare of fromUserId and toUserId
